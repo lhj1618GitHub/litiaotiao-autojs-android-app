@@ -17,6 +17,8 @@
 
 # [GKD](https://github.com/gkd-kit/gkd)：功能更强；订阅式规则，自定义难度更高；使用管理员权限，可选shizuku；
 
+[我的本地规则备份](https://github.com/lhj1618GitHub/GGKD/releases)
+
 # 更多功能
 
 跳过广告提示语；微信自动登录；微信自动查看原图；微信自动勾选原图；QQ自动登录；QQ自动查看原图；网易云更新弹窗；抖音更新弹窗；其它任意弹窗
