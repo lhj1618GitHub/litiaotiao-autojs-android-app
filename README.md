@@ -8,7 +8,7 @@
 
 
 
-### [李跳跳网站](https://litiaotiao.cn/)；[GitHub-李跳跳](https://github.com/rongzhiy/LiTiaotiao)；[李跳跳进阶指南](https://litiaotiao.cn/posts/litiaotiao_advanced_guide/)
+### [李跳跳-开发者主页](https://rongzhiy.github.io/2023/08/27/open-source-project/%E5%B9%BF%E5%91%8A%E6%8B%A6%E6%88%AA/) - [第三方](https://litiaotiao.cn/)；[GitHub-李跳跳](https://github.com/rongzhiy/LiTiaotiao)；[李跳跳进阶指南](https://litiaotiao.cn/posts/litiaotiao_advanced_guide/)
 
 ## [李跳跳更多说明](./李跳跳更多说明.md/) -[界面分析](https://github.com/SongYeXiaoLuo/Xiaoluo.spy/releases) - [李跳跳规则示范及说明](https://github.com/lhj1618GitHub/litiaotiao-leitiaotiao-android-app/releases/download/20251014/litiaotiao_sample.txt)
 
