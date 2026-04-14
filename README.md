@@ -1,22 +1,37 @@
-## 李跳跳app+规则合并去重工具+布局查看工具+自定义规则编写工具([Gitee](https://gitee.com/lhj1618/litiaotiao-autojs-android-app))
+[李跳跳官方GitHub主页](https://github.com/rongzhiy/LiTiaotiao) - [相关网站](https://litiaotiao.cn/)；
 
-可以跳过开屏广告的安卓手机软件工具。其范围广、精确高、有效“干掉”广告的特点受到众多网友好评，被戏称为“互联网药神”。
+李跳跳是一款可以跳过开屏广告的安卓手机软件工具。其范围广、精确高、有效“干掉”广告的特点受到众多网友好评，被戏称为“互联网药神”。
 
-### [autojs-4.1](https://github.com/enjoyDay/my-autojs4)；[LiTT仓库](https://github.com/lhj1618GitHub/litiaotiao-autojs-android-app/releases) - [打开-LiTT](https://lhj1618github.github.io/html/LiTT4.html)李跳跳自定义规则编写辅助工具，配合autos可免修改粘贴。优先下载HTML文件，手机电脑都可以使用，手机也可下载apk文件。
+功能含有：跳过广告提示语；微信自动登录；微信自动查看原图；微信自动勾选原图；QQ自动登录；QQ自动查看原图；网易云更新弹窗；抖音更新弹窗；其它任意含无障碍信息的目标。
+
+---
+
+LiTT：李跳跳规则辅助工具，配合autojs使用效果最佳，可无修改一键生成。[预览-LiTT](https://lhj1618github.github.io/html/LiTT4.html)
 
 <img width="828" height="730" alt="image" src="https://github.com/user-attachments/assets/f4e9bdb7-86d6-41ad-ab73-26cf36c53b46" />
 
-### [李跳跳-开发者主页](https://rongzhiy.github.io/2023/08/27/open-source-project/%E5%B9%BF%E5%91%8A%E6%8B%A6%E6%88%AA/) - [第三方](https://litiaotiao.cn/)；[GitHub-李跳跳](https://github.com/rongzhiy/LiTiaotiao)；[李跳跳进阶指南](https://litiaotiao.cn/posts/litiaotiao_advanced_guide/)
+---
 
-## [李跳跳更多说明](./李跳跳更多说明.md/) -[界面分析](https://github.com/SongYeXiaoLuo/Xiaoluo.spy/releases) - [李跳跳规则示范及说明](https://github.com/lhj1618GitHub/litiaotiao-leitiaotiao-android-app/releases/download/20251014/litiaotiao_sample.txt)
+李跳跳进阶说明
 
-## 同类软件推荐
+- [利用autojs获取控件信息](https://litiaotiao.cn/posts/use_autojs_to_get_control_information/)
 
-- [Touch-Helper](https://github.com/zfdang/Android-Touch-Helper/releases)：开屏跳过，仅使用无障碍服务；可采集控件信息/添加坐标点击/修改目标文字；资源占用最低；
+- [李跳跳实用规则示例](https://litiaotiao.cn/posts/litiaotiao_share_practical_rules/)
 
-- 推荐-[GKD](https://github.com/gkd-kit/gkd)：功能更强；订阅式规则，自定义难度更高；使用管理员权限，可选shizuku；
-[我的本地规则备份](https://github.com/lhj1618GitHub/GGKD/releases)
+- [自定义规则](https://github.com/Snoopy1866/LiTiaotiao-Custom-Rules/tree/main)
 
+- [下载规则合集json文件](https://litiaotiao.cn/AllRules.json)
 
-## END
+- [其它使用说明](./其它使用说明.md/)
 
+***
+
+下载 ：[Gitee](https://gitee.com/lhj1618/LiTT/releases) - [Gitcode](https://gitcode.com/lhj1618/LiTT/releases) - [GitHub](https://github.com/lhj1618GitHub/litiaotiao-autojs-android-app)
+
+---
+
+同类软件推荐
+
+- [Touch-Helper](https://github.com/zfdang/Android-Touch-Helper/releases)：只跳过开屏广告，仅使用无障碍服务；可采集控件信息/添加坐标点击/修改目标文字；资源占用最低；
+
+- 推荐-[GKD](https://github.com/gkd-kit/gkd)：功能更强；订阅式规则，自定义难度更高；使用管理员权限，可选shizuku；[我的GKD规则](https://github.com/lhj1618GitHub/GGKD/)
