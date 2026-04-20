@@ -9,9 +9,9 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Tahoma,sans-serif}
 body{background:var(--bg-primary);color:var(--text-primary);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:20px}
 .container{width:100%;max-width:800px;display:flex;flex-direction:column;gap:20px}
-header{text-align:center;margin-bottom:20px}
-h1{font-size:24px;margin-bottom:15px;color:var(--accent)}
-.toggle-section{display:flex;justify-content:center;align-items:center;gap:15px;margin-bottom:20px;flex-wrap:wrap}
+header{text-align:center;margin-bottom:0}
+h1{font-size:24px;margin-bottom:0;color:var(--accent)}
+.toggle-section{display:flex;justify-content:center;align-items:center;gap:15px;margin-bottom:0;flex-wrap:wrap}
 .switch{position:relative;display:inline-block;width:60px;height:30px}
 .switch input{opacity:0;width:0;height:0}
 .slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:var(--bg-tertiary);transition:.4s;border-radius:30px}
@@ -20,7 +20,7 @@ input:checked+.slider{background:var(--accent)}
 input:checked+.slider:before{transform:translateX(30px)}
 .link{color:var(--accent);text-decoration:none}
 .link:hover{text-decoration:underline}
-.input-group{display:flex;flex-direction:column;gap:10px;margin-bottom:15px}
+.input-group{display:flex;flex-direction:column;gap:10px;margin-bottom:0}
 .input-row{display:flex;align-items:center;gap:10px}
 .input-label{min-width:100px;text-align:right;flex-shrink:0}
 .input-wrapper{flex:1;position:relative;min-width:0}
@@ -28,7 +28,7 @@ input[type="text"]{width:100%;padding:10px;background:var(--bg-secondary);border
 input[type="text"]::placeholder{color:var(--text-secondary)}
 .clear-btn{padding:10px 15px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);cursor:pointer;white-space:nowrap;flex-shrink:0}
 .clear-btn:hover{background:#444}
-.button-group{display:flex;gap:10px;margin-bottom:20px}
+.button-group{display:flex;gap:10px;margin-bottom:0}
 .action-btn{flex:1;padding:12px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);cursor:pointer;font-size:14px;transition:.3s}
 .action-btn:hover{background:var(--accent)}
 .output-section{display:flex;flex-direction:column;gap:10px}
@@ -43,8 +43,8 @@ input[type="text"]::placeholder{color:var(--text-secondary)}
 .help-content{line-height:1.6}
 .help-content h2{margin:15px 0 10px;color:var(--accent)}
 .help-content h3{margin:12px 0 8px}
-.help-content p{margin-bottom:10px}
-.help-content ul,.help-content ol{margin-left:20px;margin-bottom:10px}
+.help-content p{margin-bottom:0}
+.help-content ul,.help-content ol{margin-left:20px;margin-bottom:0}
 .help-content code{background:var(--bg-secondary);padding:2px 5px;border-radius:3px;font-family:Courier New,monospace}
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);padding:10px 20px;background:var(--success);color:#fff;border-radius:4px;z-index:1001;opacity:0;transition:opacity .3s}
 .toast.show{opacity:1}
