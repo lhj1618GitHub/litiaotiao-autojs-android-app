@@ -7,11 +7,11 @@
 <style>
 :root{--bg-primary:#1a1a1a;--bg-secondary:#2d2d2d;--bg-tertiary:#3d3d3d;--text-primary:#fff;--text-secondary:#ccc;--accent:#4a9cff;--border:#555;--success:#4caf50}
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Tahoma,sans-serif}
-body{background:var(--bg-primary);color:var(--text-primary);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:20px}
-.container{width:100%;max-width:800px;display:flex;flex-direction:column;gap:20px}
-header{text-align:center;margin-bottom:0}
-h1{font-size:24px;margin-bottom:0;color:var(--accent)}
-.toggle-section{display:flex;justify-content:center;align-items:center;gap:15px;margin-bottom:0;flex-wrap:wrap}
+body{background:var(--bg-primary);color:var(--text-primary);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:10px}
+.container{width:100%;max-width:800px;display:flex;flex-direction:column;gap:0;position:relative}
+header{text-align:center;margin:0;padding:0}
+h1{font-size:20px;margin:0;padding:5px 0;color:var(--accent)}
+.toggle-section{display:flex;justify-content:center;align-items:center;gap:10px;margin:0;padding:5px 0;flex-wrap:wrap}
 .switch{position:relative;display:inline-block;width:60px;height:30px}
 .switch input{opacity:0;width:0;height:0}
 .slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:var(--bg-tertiary);transition:.4s;border-radius:30px}
@@ -20,43 +20,75 @@ input:checked+.slider{background:var(--accent)}
 input:checked+.slider:before{transform:translateX(30px)}
 .link{color:var(--accent);text-decoration:none}
 .link:hover{text-decoration:underline}
-.input-group{display:flex;flex-direction:column;gap:10px;margin-bottom:0}
-.input-row{display:flex;align-items:center;gap:10px}
-.input-label{min-width:100px;text-align:right;flex-shrink:0}
+.input-group{display:flex;flex-direction:column;gap:5px;margin:0;padding:0}
+.input-row{display:flex;align-items:center;gap:8px;margin:0;padding:2px 0}
+.input-label{min-width:90px;text-align:right;flex-shrink:0}
 .input-wrapper{flex:1;position:relative;min-width:0}
-input[type="text"]{width:100%;padding:10px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);font-size:14px}
+input[type="text"]{width:100%;padding:8px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);font-size:14px}
 input[type="text"]::placeholder{color:var(--text-secondary)}
-.clear-btn{padding:10px 15px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);cursor:pointer;white-space:nowrap;flex-shrink:0}
+.clear-btn{padding:8px 12px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);cursor:pointer;white-space:nowrap;flex-shrink:0}
 .clear-btn:hover{background:#444}
-.button-group{display:flex;gap:10px;margin-bottom:0}
-.action-btn{flex:1;padding:12px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);cursor:pointer;font-size:14px;transition:.3s}
+.button-group{display:flex;gap:8px;margin:0;padding:5px 0}
+.action-btn{flex:1;padding:10px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);cursor:pointer;font-size:14px;transition:.3s}
 .action-btn:hover{background:var(--accent)}
-.output-section{display:flex;flex-direction:column;gap:10px}
-#output{min-height:150px;padding:15px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:4px;font-family:Courier New,monospace;font-size:14px;white-space:pre-wrap;word-wrap:break-word;overflow-y:auto}
-.output-actions{display:flex;gap:10px}
-.copy-btn,.help-btn{padding:10px 20px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);cursor:pointer}
-.copy-btn:hover,.help-btn:hover{background:var(--accent)}
+.output-section{display:flex;flex-direction:column;gap:8px;margin:0;padding:5px 0}
+#output{min-height:120px;padding:10px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:4px;font-family:Courier New,monospace;font-size:14px;white-space:pre-wrap;word-wrap:break-word;overflow-y:auto}
+.output-actions{display:flex;gap:8px}
+.copy-btn,.help-btn,.merge-btn{padding:8px 16px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);cursor:pointer}
+.copy-btn:hover,.help-btn:hover,.merge-btn:hover{background:var(--accent)}
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1000;align-items:center;justify-content:center}
-.modal-content{background:var(--bg-primary);width:90%;max-width:800px;max-height:80vh;padding:20px;border-radius:8px;overflow-y:auto;position:relative}
+.modal-content{background:var(--bg-primary);width:90%;max-width:800px;max-height:80vh;padding:15px;border-radius:8px;overflow-y:auto;position:relative}
 .close-btn{position:absolute;top:10px;right:15px;font-size:24px;cursor:pointer;color:var(--text-secondary)}
 .close-btn:hover{color:var(--text-primary)}
-.help-content{line-height:1.6}
-.help-content h2{margin:15px 0 10px;color:var(--accent)}
-.help-content h3{margin:12px 0 8px}
-.help-content p{margin-bottom:0}
-.help-content ul,.help-content ol{margin-left:20px;margin-bottom:0}
+.help-content{line-height:1.4}
+.help-content h2{margin:10px 0 5px;color:var(--accent)}
+.help-content h3{margin:8px 0 5px}
+.help-content p{margin-bottom:5px}
+.help-content ul,.help-content ol{margin-left:15px;margin-bottom:5px}
 .help-content code{background:var(--bg-secondary);padding:2px 5px;border-radius:3px;font-family:Courier New,monospace}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);padding:10px 20px;background:var(--success);color:#fff;border-radius:4px;z-index:1001;opacity:0;transition:opacity .3s}
+.toast{position:fixed;bottom:10px;left:50%;transform:translateX(-50%);padding:8px 16px;background:var(--success);color:#fff;border-radius:4px;z-index:1001;opacity:0;transition:opacity .3s}
 .toast.show{opacity:1}
+
+.merge-overlay{
+  display:none;
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  background:var(--bg-primary);
+  z-index:999;
+  padding:10px;
+  flex-direction:column;
+  gap:8px;
+}
+.merge-header{display:flex;justify-content:space-between;align-items:center}
+.merge-title{font-size:15px;color:var(--accent);font-weight:bold}
+.edit-btn{padding:6px 12px;background:var(--accent);border:none;border-radius:4px;color:#fff;cursor:pointer}
+.merge-current{
+  position:relative;
+  padding:8px;
+  background:var(--bg-secondary);
+  border:1px solid var(--border);
+  border-radius:4px;
+  min-height:50px;
+  white-space:pre-wrap;
+  word-wrap:break-word;
+}
+.merge-input-row{display:flex;gap:8px;align-items:center}
+#mergeInput{flex:1;padding:8px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);height:90px}
+.merge-output{padding:8px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:4px;min-height:100px;white-space:pre-wrap;word-wrap:break-word}
+.merge-buttons{display:flex;gap:8px}
+.merge-action-btn{flex:1;padding:10px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);cursor:pointer}
+.merge-action-btn:hover{background:var(--accent)}
+
 @media(max-width:600px){
-.input-row{flex-wrap:nowrap;overflow-x:auto;padding-bottom:5px;gap:8px}
-.input-label{min-width:90px;text-align:left}
-.input-wrapper{min-width:150px}
-.button-group{flex-direction:column}
+.input-row{flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px;gap:5px}
+.input-label{min-width:85px;text-align:left}
+.input-wrapper{min-width:140px}
+.button-group{flex-direction:column;gap:5px}
+.merge-input-row{flex-direction:column}
 }
 @media(max-width:400px){
-.input-label{min-width:80px;font-size:13px}
-input[type="text"],.clear-btn{padding:8px;font-size:13px}
+.input-label{min-width:80px;font-size:12px}
+input[type="text"],.clear-btn{padding:6px;font-size:12px}
 }
 </style>
 </head>
@@ -67,7 +99,7 @@ input[type="text"],.clear-btn{padding:8px;font-size:13px}
 <div class="toggle-section">
 <label class="switch"><input type="checkbox" id="toggleSwitch"><span class="slider"></span></label>
 <span>开屏广告</span>
-<a href="https://gitee.com/lhj1618/LiTT/releases" class="link" target="_blank">下载李跳跳/autojs</a>
+<a href="https://gitee.com/lhj1618/litiaotiao-autojs-android-app" class="link" target="_blank">下载李跳跳/autojs</a>
 </div>
 </header>
 
@@ -77,25 +109,21 @@ input[type="text"],.clear-btn{padding:8px;font-size:13px}
 <div class="input-wrapper"><input type="text" id="triggerInput" placeholder="id/bounds/文字"></div>
 <button class="clear-btn" id="clearTrigger">清空</button>
 </div>
-
 <div class="input-row">
 <span class="input-label">点击目标：</span>
 <div class="input-wrapper"><input type="text" id="targetInput" placeholder="用返回键时留空/id/bounds/文字"></div>
 <button class="clear-btn" id="clearTarget">清空</button>
 </div>
-
 <div class="input-row" id="checkRow">
 <span class="input-label">检查次数：</span>
 <div class="input-wrapper"><input type="text" id="checkInput" placeholder="默认留空,过大影响耗电"></div>
 <button class="clear-btn" id="clearCheck">清空</button>
 </div>
-
 <div class="input-row" id="timesRow">
 <span class="input-label">点击次数：</span>
 <div class="input-wrapper"><input type="text" id="timesInput" placeholder="默认留空"></div>
 <button class="clear-btn" id="clearTimes">清空</button>
 </div>
-
 <div class="input-row" id="delayRow">
 <span class="input-label">点击延时：</span>
 <div class="input-wrapper"><input type="text" id="delayInput" placeholder="默认留空,单位:ms"></div>
@@ -117,8 +145,27 @@ input[type="text"],.clear-btn{padding:8px;font-size:13px}
 <div class="output-actions">
 <button class="copy-btn" id="copyBtn">复制</button>
 <button class="help-btn" id="helpBtn">规则说明</button>
+<button class="merge-btn" id="mergeBtn">合并规则</button>
 </div>
+
+<div class="merge-overlay" id="mergeOverlay">
+  <div class="merge-header">
+    <div class="merge-title">当前规则</div>
+    <button id="editBtn" class="edit-btn">编辑</button>
+  </div>
+  <div id="mergeCurrentRule" class="merge-current"></div>
+  <div class="merge-input-row">
+    <input type="text" id="mergeInput" placeholder="请输入需要合并的规则">
+    <button class="clear-btn" id="clearMergeInput">清空</button>
+  </div>
+  <div class="merge-title">合并结果</div>
+  <div id="mergeOutput" class="merge-output"></div>
+  <div class="merge-buttons">
+    <button class="merge-action-btn" id="doMergeBtn">执行合并</button>
+    <button class="merge-action-btn" id="copyMergeBtn">复制合并结果</button>
+  </div>
 </div>
+
 </div>
 
 <div class="modal" id="helpModal">
@@ -136,28 +183,22 @@ input[type="text"],.clear-btn{padding:8px;font-size:13px}
 <li><code>{"keywords":["tv_close_button"]}</code></li>
 <li><code>{"keywords":["900,160,1170,250"]}</code></li>
 </ul>
-
 <h3>二：弹窗规则</h3>
 <h4>①基础版：</h4>
 <p><code>{"popup_rules":[{"id":"ooo","action":"xxx"}]}</code></p>
 <p>意思是：当检测到ooo这几个文字的时候，就自动点击 xxx 这个按钮。</p>
 <p><code>{"popup_rules":[{"id":"ooo","action":"GLOBAL_ACTION_BACK"}]}</code></p>
 <p>意思是：当检测到ooo这几个文字的时候，就自动使用手机返回键。</p>
-
 <h4>②倒计时/多个广告版：</h4>
 <p><code>{"popup_rules":[{"id":"还剩&秒","action":"还剩&秒",times:0},{"id":"广告","action":"关闭按钮"}],"unite_popup_rules":true}</code></p>
-<p>说明：持续任务的耗时是不确定的，需要把这个过程的中间态和要点击的按钮用两个规则分开表示</p>
-
 <h4>③进阶版：</h4>
 <p><code>{"popup_rules":[{"id":"+ooo&-ppp","action":"=xxx"}]}</code></p>
 <p>设置强制点击：<code>{"click_way_popup":1}</code></p>
 <p>设置搜索次数5：<code>{"search_times_popup":5}</code></p>
 <p>设置延迟200ms点击-开屏广告：<code>{"delay":200}</code></p>
 <p>设置延迟200ms点击-弹窗广告：<code>{"delay_popup":200}</code></p>
-
 <h3>三：其它说明</h3>
 <p>+开头匹配；-结尾匹配；=完全匹配；&并且</p>
-
 <h3>四：常见问题</h3>
 <p>规则正确无法关闭：用联合规则+unite_popup_rules:true</p>
 <p>误点：加入白名单或用keywords覆盖</p>
@@ -172,18 +213,17 @@ const dom = {};
 ['toggleSwitch','triggerInput','targetInput','checkInput','timesInput','delayInput',
 'clearTrigger','clearTarget','clearCheck','clearTimes','clearDelay',
 'setControl','setGeneral','setContinuous','output','copyBtn','helpBtn','helpModal','closeModal','toast',
-'triggerRow','checkRow','timesRow','delayRow'].forEach(id=>dom[id]=document.getElementById(id));
+'triggerRow','checkRow','timesRow','delayRow','mergeBtn','mergeOverlay','mergeCurrentRule','mergeInput',
+'clearMergeInput','mergeOutput','doMergeBtn','copyMergeBtn','editBtn'].forEach(id=>dom[id]=document.getElementById(id));
 
 let ooo='',xxx='GLOBAL_ACTION_BACK';
 let sum='"search_times_popup":1',timesParam='',d1='"delay_popup":T',d2='"delay":T';
 const defaultTip=dom.output.textContent;
 
-// 数字输入限制
 [dom.checkInput,dom.timesInput,dom.delayInput].forEach(el=>{
   el.addEventListener('input',()=>el.value=el.value.replace(/[^\d]/g,''));
 });
 
-// 格式化内容
 function fmt(s){
   s=s.trim();
   let m;
@@ -191,16 +231,14 @@ function fmt(s){
   return s;
 }
 
-// 提示
 function toast(msg){
   dom.toast.textContent=msg;
   dom.toast.classList.add('show');
   setTimeout(()=>dom.toast.classList.remove('show'),2000);
 }
 
-// 复制
-function copy(){
-  const t=dom.output.textContent.trim();
+function copy(text){
+  const t=text||dom.output.textContent.trim();
   if(!t)return toast('无内容可复制');
   navigator.clipboard?.writeText(t).then(()=>toast('复制成功')).catch(fallback);
   function fallback(){
@@ -210,7 +248,6 @@ function copy(){
   }
 }
 
-// 拼接参数
 function buildParams(){
   const arr=[];
   if(dom.checkInput.value)arr.push(sum);
@@ -218,10 +255,8 @@ function buildParams(){
   return arr.length?','+arr.join(','):'';
 }
 
-// 重置输出
 function resetTip(){dom.output.textContent=defaultTip}
 
-// 开关切换
 dom.toggleSwitch.addEventListener('change',()=>{
   const v=dom.toggleSwitch.checked;
   dom.triggerRow.style.display=v?'none':'flex';
@@ -231,7 +266,6 @@ dom.toggleSwitch.addEventListener('change',()=>{
   dom.setContinuous.style.display=v?'none':'block';
 });
 
-// 输入事件
 dom.triggerInput.addEventListener('blur',()=>ooo=fmt(dom.triggerInput.value));
 dom.targetInput.addEventListener('blur',()=>xxx=fmt(dom.targetInput.value));
 dom.checkInput.addEventListener('blur',()=>sum=dom.checkInput.value?`"search_times_popup":${dom.checkInput.value}`:'"search_times_popup":1');
@@ -242,14 +276,12 @@ dom.delayInput.addEventListener('blur',()=>{
   else{dom.toggleSwitch.checked?(d2=`"delay":${v}`):(d1=`"delay_popup":${v}`);}
 });
 
-// 清空
 dom.clearTrigger.addEventListener('click',()=>{dom.triggerInput.value='';ooo='';resetTip()});
 dom.clearTarget.addEventListener('click',()=>{dom.targetInput.value='';xxx='GLOBAL_ACTION_BACK';resetTip()});
 dom.clearCheck.addEventListener('click',()=>{dom.checkInput.value='';sum='"search_times_popup":1';resetTip()});
 dom.clearTimes.addEventListener('click',()=>{dom.timesInput.value='';timesParam='';resetTip()});
 dom.clearDelay.addEventListener('click',()=>{dom.delayInput.value='';d1='"delay_popup":T';d2='"delay":T';resetTip()});
 
-// 设控件
 dom.setControl.addEventListener('click',()=>{
   let rule={id:ooo,action:xxx};
   if(timesParam)rule.times=Number(dom.timesInput.value);
@@ -258,7 +290,6 @@ dom.setControl.addEventListener('click',()=>{
   dom.output.textContent=s;
 });
 
-// 设一般
 dom.setGeneral.addEventListener('click',()=>{
   if(dom.toggleSwitch.checked){
     let rule={keywords_append:[xxx]};
@@ -273,7 +304,6 @@ dom.setGeneral.addEventListener('click',()=>{
   }
 });
 
-// 设连续
 dom.setContinuous.addEventListener('click',()=>{
   let rule={popup_rules:[{id:"还剩&秒",action:"还剩&秒",times:0},{id:ooo,action:xxx}],unite_popup_rules:true};
   let s=JSON.stringify(rule);
@@ -281,8 +311,81 @@ dom.setContinuous.addEventListener('click',()=>{
   dom.output.textContent=s;
 });
 
-// 复制&帮助
-dom.copyBtn.addEventListener('click',copy);
+// 修复后：正确提取规则项 + 参数去重 + 全部放在 ] 后面
+function extractItems(str) {
+  str = str.replace(/\s/g, '');
+  const items = [];
+  const hasPopup = /"popup_rules":\[([\s\S]*?)\]/.test(str);
+  if (hasPopup) {
+    const m = str.match(/"popup_rules":\[([\s\S]*?)\]/);
+    const c = m[1];
+    let d = 0, s = 0;
+    for (let i = 0; i < c.length; i++) {
+      if (c[i] === '{') d++;
+      if (c[i] === '}') d--;
+      if (d === 0 && c[i] === ',') {
+        items.push(c.slice(s, i));
+        s = i + 1;
+      }
+    }
+    if (s < c.length) items.push(c.slice(s));
+  } else {
+    items.push(str);
+  }
+  return items.filter(i => i);
+}
+
+function extractParams(str) {
+  str = str.replace(/\s/g, '');
+  const params = [];
+  const regex = /("(unite_popup_rules|search_times_popup|delay_popup|delay|search_times)":[^,}]+)/g;
+  let m;
+  while ((m = regex.exec(str)) !== null) params.push(m[1]);
+  const map = {}, res = [];
+  params.forEach(p => {
+    const k = p.split('":')[0];
+    if (!map[k]) { map[k] = 1; res.push(p); }
+  });
+  return res;
+}
+
+dom.doMergeBtn.addEventListener('click',()=>{
+  const c = dom.mergeCurrentRule.textContent.trim().replace(/\s/g,'');
+  const i = dom.mergeInput.value.trim().replace(/\s/g,'');
+  if(!c||!i)return toast('请填写完整规则');
+  
+  try{
+    const cItems = extractItems(c);
+    const iItems = extractItems(i);
+    const allItems = [...new Set([...cItems,...iItems])];
+    const cParams = extractParams(c);
+    const iParam = extractParams(i);
+    const allParams = [...new Set([...cParams,...iParam])];
+    const pStr = allParams.length ? ','+allParams.join(',') : '';
+    const wrap = c.includes('popup_rules')||i.includes('popup_rules');
+    const r = wrap ? `{"popup_rules":[${allItems.join(',')}]${pStr}}` : allItems.join(',');
+    dom.mergeOutput.textContent = r;
+  }catch(e){
+    toast('格式错误，合并失败');
+  }
+});
+
+dom.mergeBtn.addEventListener('click',()=>{
+  dom.mergeCurrentRule.textContent = dom.output.textContent.trim();
+  dom.mergeOverlay.style.display = 'flex';
+});
+
+dom.editBtn.addEventListener('click',()=>{
+  dom.mergeOverlay.style.display = 'none';
+});
+
+dom.clearMergeInput.addEventListener('click',()=>{
+  dom.mergeInput.value = '';
+  dom.mergeOutput.textContent = '';
+});
+
+dom.copyMergeBtn.addEventListener('click',()=>copy(dom.mergeOutput.textContent));
+dom.copyBtn.addEventListener('click',()=>copy());
 dom.helpBtn.addEventListener('click',()=>dom.helpModal.style.display='flex');
 dom.closeModal.addEventListener('click',()=>dom.helpModal.style.display='none');
 window.addEventListener('click',e=>e.target===dom.helpModal&&(dom.helpModal.style.display='none'));
