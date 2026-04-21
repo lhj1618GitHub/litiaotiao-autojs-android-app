@@ -8,7 +8,10 @@
 
 LiTT：李跳跳规则辅助工具，配合autojs使用效果最佳，可无修改一键生成。[预览-LiTT](https://lhj1618github.github.io/html/LiTT4.html)
 
-<img width="828" height="730" alt="image" src="https://github.com/user-attachments/assets/f4e9bdb7-86d6-41ad-ab73-26cf36c53b46" />
+<img width="815" height="537" alt="00" src="https://github.com/user-attachments/assets/3d888e63-afdb-47b3-a814-d3424cc93edd" />
+
+<img width="840" height="508" alt="01" src="https://github.com/user-attachments/assets/4237137d-36ae-4915-b866-448bd5b4e132" />
+
 
 ---
 
