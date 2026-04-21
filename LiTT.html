@@ -73,8 +73,9 @@ input[type="text"]::placeholder{color:var(--text-secondary)}
   word-wrap:break-word;
 }
 .merge-input-row{display:flex;gap:8px;align-items:center}
-#mergeInput{flex:1;padding:8px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);height:90px}
-.merge-output{padding:8px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:4px;min-height:100px;white-space:pre-wrap;word-wrap:break-word}
+/* 改成textarea样式，与输出框一致+自动换行 */
+#mergeInput{flex:1;padding:8px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);min-height:100px;white-space:pre-wrap;word-wrap:break-word;overflow-y:auto;resize:none}
+.merge-output{padding:8px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:4px;min-height:100px;white-space:pre-wrap;word-wrap:break-word;overflow-y:auto}
 .merge-buttons{display:flex;gap:8px}
 .merge-action-btn{flex:1;padding:10px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);cursor:pointer}
 .merge-action-btn:hover{background:var(--accent)}
@@ -89,6 +90,8 @@ input[type="text"]::placeholder{color:var(--text-secondary)}
 @media(max-width:400px){
 .input-label{min-width:80px;font-size:12px}
 input[type="text"],.clear-btn{padding:6px;font-size:12px}
+#mergeInput{min-height:80px}
+.merge-output{min-height:80px}
 }
 </style>
 </head>
@@ -155,7 +158,8 @@ input[type="text"],.clear-btn{padding:6px;font-size:12px}
   </div>
   <div id="mergeCurrentRule" class="merge-current"></div>
   <div class="merge-input-row">
-    <input type="text" id="mergeInput" placeholder="请输入需要合并的规则">
+    <!-- 换成textarea，支持多行自动换行 -->
+    <textarea id="mergeInput" placeholder="请输入需要合并的规则"></textarea>
     <button class="clear-btn" id="clearMergeInput">清空</button>
   </div>
   <div class="merge-title">合并结果</div>
